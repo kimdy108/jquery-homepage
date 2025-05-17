@@ -1,0 +1,44 @@
+<!-- 
+  remove() : 본인 포함 다 삭제
+  empty() : 본인 제외 자식 다 삭제
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      $('#btn').on('click', function() {
+        // $('.div1').remove()
+        // $('.div1').empty()
+        $('p').remove('.red, .yellow') // 필터를 사용하여 제거가능
+      })
+    })
+  </script>
+  <style>
+    /* .div1{
+      border: 1px solid red;
+      background-color: yellow;
+    } */
+    .red {
+      background-color: red;
+    }
+    .yellow {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">클릭</button>
+    <p>안녕하세요</p>
+    <p class="red">안녕하세요</p>
+    <p class="yellow">안녕하세요</p>
+    <p>안녕하세요</p>
+    <p>안녕하세요</p>
+    <p>안녕하세요</p>
+</body>
+</html>
