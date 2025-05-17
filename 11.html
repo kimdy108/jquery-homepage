@@ -1,0 +1,34 @@
+<!--
+  slideDown : 드롭박스처럼 내려옴
+  slideUp : 메뉴가 올라가면서 사라짐
+  slideToggle : 위 두개 반복
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <style>
+    div.div_menu {
+      width: 300px;
+      background-color: yellowgreen;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <button class="btn_menu">메뉴야 열려라</button>
+  <div class="div_menu">메뉴1<br>메뉴2<br>메뉴3</div>
+  
+  <script>
+    $("button.btn_menu").on('click', function() {
+      $("div.div_menu").slideToggle(100, function () {
+        alert("end")
+      })
+    })
+  </script>
+</body>
+</html>
