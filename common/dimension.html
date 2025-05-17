@@ -1,0 +1,55 @@
+<!-- 
+  inner : 내 안쪽만 계산
+  innerWidth() : padding이 추가된 width 출력 -> width 100px + left padding 10px + right padding + 10px
+  innerHeight() : padding 이 추가된 height 출력 -> height 100px + top padding 10px + bottom padding + 10px
+
+  outer : 내 바깥쪽까지 계산 // 또한 outerWidth(true) 로 하면 margin까지 계산 - default는 false
+  outerWidth() : padding + border 까지 계산 -> width 100px + left padding 10px + right padding 10px + left border 10px + right border 10px
+  outerHeight() : padding + border 까지 계산 -> height 100px + top padding 10px + bottom padding 10px + top border 10px + bottom border 10px
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Dimensions method</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      $('#btn').on('click', function() {
+        // $('#display').text('width = ' + $('.dim').width() + ' height = ' + $('.dim').height() )
+        // $('#display').text('width = ' + $('.dim').innerWidth() + ' height = ' + $('.dim').innerHeight() )
+        $('#display').text('width = ' + $('.dim').outerWidth() + ' height = ' + $('.dim').outerHeight() )
+        // $('#display').text('width = ' + $('.dim').outerWidth(true) + ' height = ' + $('.dim').outerHeight(true) )
+      })
+    })
+  </script>
+  <style>
+    body {
+      margin: 0;
+    }
+    div.dim{
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      border: 10px solid red;
+      background-color: goldenrod;
+      /* box-sizing: border-box; */ /* 이 옵션을 사용하면 padding, margin 등이 있어도 width에 맞춰서 실제 크기를 조정 -> 위와 같은 경우라면 실제는 60px */
+    }
+    div.dim1{
+      width: 160px;
+      height: 100px;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">클릭</button>
+  <span>크기 출력 : </span>
+  <span id="display"></span>
+  <div class="dim"></div>
+  <div class="dim1"></div>
+
+</body>
+</html>
