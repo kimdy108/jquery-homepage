@@ -1,0 +1,43 @@
+<!-- 
+  addClass() : class 추가 -> 해당 클래스의 css 가 존재하면 그 css 바로 적용 (두가지 이상 적용하려면 공백 후 추가 입력)
+  removeClass() : class 삭제 -> 해당 클래스의 css 바로 적용 삭제
+  toggleClass() : 위 두개 반복
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <style>
+    .blue {
+      background-color: blue;
+    }
+    .color {
+      color: white
+    }
+  </style>
+  <script>
+    $(function() {
+      $('#btn').on('click', function() {
+        $('#target').addClass('blue color')
+      })
+      $('#btn1').on('click', function() {
+        $('#target').removeClass('blue color')
+      })
+      $('#btn2').on('click', function() {
+        $('#target').toggleClass('blue color')
+      })
+    })
+  </script>
+</head>
+<body>
+  <button id="btn">addClass 클릭</button>
+  <button id="btn1">removeClass 클릭</button>
+  <button id="btn2">toggleClass 클릭</button>
+  
+  <p id="target">안녕하세요.</p>
+</body>
+</html>
