@@ -1,0 +1,42 @@
+<!-- 
+  traverse : 부모, 부모들의 부모, 자식까지 전부 적용하는 메서드
+  .parent() : 기준에서 바로 위의 부모만 적용
+  .parents() : 기준에서 제일 위의 부모까지 전부 적용 -> body까지!!! -> parents("p") 이면 부모들 중 p 태그만 적용!
+  .parentsUntil() : 끝의 기준을 정할 수 있음 -> parentsUntil('div') : 기준에서 부모들중 div 까지 적용
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <style>
+    .ancestors * {
+      display: block;
+      border: 5px solid gray;
+      color: gray;
+      padding: 10px;
+      margin: 10px;
+    }
+  </style>
+  <script>
+    $(function() {
+      $('span.aaaa').parentsUntil('div').css({
+        'color' : 'blue',
+        'border' : '5px solid hotpink'
+      })
+    })
+  </script>
+</head>
+<body>
+  <div class="ancestors">
+    ancestors
+    <p><span class="aaaa">span</span></p>
+    <p>p</p>
+    <p><span>span</span></p>
+    <p>p</p>
+  </div>
+</body>
+</html>
