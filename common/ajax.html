@@ -1,0 +1,27 @@
+<!-- 
+  ajax: 화면을 재로딩하지 않고 백그라운드에서 돌리는 것!
+        ex) .load('./outer.txt') : outer.txt 의 내용을 가져와서 넘기는 것
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      $('button').on('click', function() {
+        // $('#display').text('안녕하세요.')
+        $('#display').load('./outer.txt')
+      })
+    })
+  </script>
+</head>
+<body>
+  <button>클릭</button>
+
+  <div id="display">===========================</div>
+</body>
+</html>

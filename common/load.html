@@ -1,0 +1,31 @@
+<!-- 
+  .load('url',{data},callback)
+  .load('./outer.txt') : outer.txt 의 내용을 가져와서 넘기는 것 - url만있으면 Get Method
+  .load('./outer.txt',{"name":"maar"}) -> url + data 가 있으면 Post Method
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      $('#btn_click').on('click', function() {
+        $('#display').load('./outer1.html', function(responseText, statusText, xhr) {
+          if (statusText == 'error') {
+            // alert('파일을 찾을 수 없습니다.')
+            alert('Error : ' + xhr.status + ': ' + xhr.statusText)
+          }
+        })
+      })
+    })
+  </script>
+</head>
+<body>
+  <button id="btn_click">클릭</button>
+  <div id="display"></div>
+</body>
+</html>
