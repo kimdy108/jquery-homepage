@@ -1,0 +1,26 @@
+<!-- 
+  noConflict(): $를 다른 곳에서 사용할 수도 있으니 현재 jquery 에서 다른 문자로 사용할 수 있도록 해주는 것.
+                ex) let abc = $.noConflict(); -> 이때 $ 대신 abc로 사용 할 수 있음.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    let abc = $.noConflict();
+    abc(function() {
+      abc('button').on('click', function() {
+        abc('.display').text('동작?')
+      })
+    })
+  </script>
+</head>
+<body>
+  <button>클릭</button>
+  <div class="display">=====</div>
+</body>
+</html>
