@@ -1,0 +1,51 @@
+<!-- 
+  wrap() : selector 를 wrap 의 요소로 감싸는 것
+  wrapAll() : selector 를 한번에 감싸는 것
+  wrapInner() : selector 의 안쪽에서 감싸는 것
+  unwrap() : selector의 감싸고 있는 것을 없애는 것 -> N 개로 감싸 있을 경우 N 번을 실행하면 전부 풀어짐
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      // $('p').wrap('<div></div>')
+      // $('p').wrapAll('<div></div>')
+      // $('p').wrapInner('<div></div>')
+      // $('p').unwrap()
+      $('button').on('click', function(){
+        $('p').unwrap()
+      })
+    })
+  </script>
+  <style>
+    p {
+      background-color: yellow;
+    }
+    div{
+      border: 5px solid red;
+      margin: 10px;
+    }
+    main {
+      border: 5px solid blue;
+      margin: 10px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button>클릭</button>
+  <main>
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, quis.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, quis.</p>
+      <p>Lorem ipsum dolor sit <span>amet,</span> consectetur adipisicing elit. Commodi, quis.</p>
+    </div>
+  </main>
+</body>
+</html>
