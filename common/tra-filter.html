@@ -1,0 +1,40 @@
+<!-- 
+  traverse
+  first() : 선택된 요소의 첫번째
+  last() : 선택된 요소의 마지막
+  eq() : index 기존으로 요소 선택
+  not() : 기준이 되는 요소 제외 -> not('.iam') : class가 iam이 아닌 경우 전부 선택
+  filter() : 기준이 되는 요소 선택 -> 보통 여러가지를 넣을 때 사용 ex) filter('.iam')
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      $('#btn').on('click', function() {
+        $('p')
+          .css({'border':'2px solid red'})
+          .filter('.iam')
+          .css({'background-color' : 'yellow'})
+      })
+    })
+  </script>
+  <style></style>
+</head>
+<body>
+  <button id="btn">클릭</button>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sed praesentium laborum ipsum sint, enim molestiae ab aliquid, officiis dolorum iusto delectus dolorem. Nihil suscipit illum laborum! Consequuntur, ex dolor?</p>
+  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sed praesentium laborum ipsum sint, enim molestiae ab aliquid, officiis dolorum iusto delectus dolorem. Nihil suscipit illum laborum! Consequuntur, ex dolor?</p>
+  
+  <p class="iam">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sed praesentium laborum ipsum sint, enim molestiae ab aliquid, officiis dolorum iusto delectus dolorem. Nihil suscipit illum laborum! Consequuntur, ex dolor?</p>
+  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sed praesentium laborum ipsum sint, enim molestiae ab aliquid, officiis dolorum iusto delectus dolorem. Nihil suscipit illum laborum! Consequuntur, ex dolor?</p>
+</body>
+</html>
